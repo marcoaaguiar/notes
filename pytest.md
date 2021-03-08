@@ -61,11 +61,7 @@ Similar case application to the fixture functionality: avoid repetitive code and
 They are similar in intent but differ in their essence.
 **Fixtures are used to avoid writing the same code for creating the same object several times. In contrast, parametrization avoids writing similar tests several times.**
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+                               Warning                               +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Don't over-parametrize test!
+**Warning**: Don't over-parametrize test!
 Group test by expected behaviors.
 More tests are better than complex tests (Simple is better than complex).
 Don't do this:
