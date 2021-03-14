@@ -14,7 +14,23 @@ Tests are as simple as creating a function. Use the assert keyword to verify som
 ```python
 def test_add():
     x, y = 1, 2
+     
     assert add(x, y) == 3
+```
+
+## Test structure
+
+This is personal taste, but I like to structure my test in three blocks: setup, operation, assertion.
+I separate each block by a newline, making it easy to identify where it starts and where it ends, not requiring comments that are also visual clutter.
+This helps visually identifying each part of the test when visiting it later, for instance
+
+```python
+def test_make_pair():
+    x, y = 1, 2
+     
+    pair = make_pair(x, y)
+      
+    assert pair == x, y
 ```
 
 ## Raises: Expecting exceptions
@@ -117,7 +133,7 @@ def test_can_serve_ads_use_age(mocker):
 
 In this test, we create a mock user and verify if our `can_serve_ads` tested function is really checking if the user is underage.
 
-Warning: notice that at no point are we completely decoupling our tested function from the actual User object.
+**Warning**: notice that at no point are we completely decoupling our tested function from the actual User object.
 When you are mocking, you are decoupling parts of your system. If every part of your system work by itself doesn't mean that it will work when you put them together.
 Mocking is a double edge sword. At the same time that you can isolating and making sure that it will work for the expected arguments, you are isolating it from the rest of the system, meaning that it may not be receiving its expected arguments.
 
